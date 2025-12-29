@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>票务代理培训模拟器</title>
+    <link rel="stylesheet" href="ticket_simulator.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>🎫 票务代理培训模拟器</h1>
+        <p class="subtitle">打造一个“会吸引客户、会说话、能开单”的票务人设</p>
+        
+        <!-- 进度展示 -->
+        <div class="progress-section">
+            <h3><span class="level-badge">新手代理</span> 培训进度</h3>
+            <div class="progress-row">
+                <span>模块一：人设建立与朋友圈包装</span>
+                <span id="module1Progress">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="module1Bar" class="progress-fill module1-fill"></div>
+            </div>
+            
+            <div class="progress-row">
+                <span>模块二：小红书/抖音安全引流实战</span>
+                <span id="module2Progress">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="module2Bar" class="progress-fill module2-fill"></div>
+            </div>
+            
+            <div class="progress-row">
+                <span>模块三：首次咨询转化对话模拟</span>
+                <span id="module3Progress">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="module3Bar" class="progress-fill module3-fill"></div>
+            </div>
+        </div>
+        
+        <!-- 模块导航 -->
+        <div class="section">
+            <h2>📚 培训模块</h2>
+            <div class="module-grid">
+                <div class="module-card" onclick="showModule(1)">
+                    <h3>🎭 模块一：人设建立与朋友圈包装</h3>
+                    <p>打造一个“靠谱、有资源、活生生的票务专家”形象</p>
+                    <ul>
+                        <li>身份三件套设定</li>
+                        <li>朋友圈内容矩阵模拟</li>
+                        <li>避坑指南</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card" onclick="showModule(2)">
+                    <h3>📱 模块二：小红书/抖音安全引流实战</h3>
+                    <p>安全地发出第一篇引流帖，并吸引来第一个潜在客户</p>
+                    <ul>
+                        <li>平台选择与定位</li>
+                        <li>“安全词”与“引流钩子”训练</li>
+                        <li>从笔记到私信的路径模拟</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card" onclick="showModule(3)">
+                    <h3>💬 模块三：首次咨询转化对话模拟</h3>
+                    <p>把第一个主动上门的客户聊成，建立信心</p>
+                    <ul>
+                        <li>黄金三分钟应答</li>
+                        <li>处理核心疑虑</li>
+                        <li>温柔催单</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 模块内容区域 -->
+        <div id="moduleContent" class="section">
+            <h2 class="section-title">欢迎来到票务代理培训模拟器</h2>
+            <p>请从上方选择一个培训模块开始学习</p>
+        </div>
+        
+        <!-- 模块一：人设建立与朋友圈包装 -->
+        <div id="module1" class="section hidden">
+            <h2 class="section-title">🎭 模块一：人设建立与朋友圈包装</h2>
+            
+            <div class="sub-section">
+                <h3>身份三件套设定</h3>
+                
+                <div class="persona-setup-container">
+                    <!-- 左侧：人设模板和自定义选项 -->
+                    <div class="persona-options">
+                        <!-- 人设模板选择 -->
+                        <div class="form-group">
+                            <label>选择人设模板：</label>
+                            <div class="template-grid">
+                                <div class="template-card" onclick="applyTemplate('professional')">
+                                    <h4>👨‍💼 专业顾问型</h4>
+                                    <p>适合注重专业形象的票务代理</p>
+                                    <div class="template-preview">
+                                        <span class="preview-nickname">票务顾问小王</span>
+                                        <span class="preview-signature">专注演出票务10年 | 选座专家 | 靠谱为先</span>
+                                    </div>
+                                </div>
+                                <div class="template-card" onclick="applyTemplate('friend')">
+                                    <h4>👯‍♀️ 朋友分享型</h4>
+                                    <p>适合亲和力强的票务代理</p>
+                                    <div class="template-preview">
+                                        <span class="preview-nickname">小王·爱演出</span>
+                                        <span class="preview-signature">分享每一场精彩演出 | 我的票你放心</span>
+                                    </div>
+                                </div>
+                                <div class="template-card" onclick="applyTemplate('insider')">
+                                    <h4>🎭 行业内部型</h4>
+                                    <p>适合强调资源优势的票务代理</p>
+                                    <div class="template-preview">
+                                        <span class="preview-nickname">演出内部渠道小王</span>
+                                        <span class="preview-signature">独家资源 | 稀缺票源 | 第一时间获取</span>
+                                    </div>
+                                </div>
+                                <div class="template-card" onclick="applyTemplate('enthusiast')">
+                                    <h4>🎉 狂热粉丝型</h4>
+                                    <p>适合对演出充满热情的票务代理</p>
+                                    <div class="template-preview">
+                                        <span class="preview-nickname">演出达人小王</span>
+                                        <span class="preview-signature">用我的热情带你看遍世界演出 | 靠谱票务</span>
+                                    </div>
+                                </div>
+                                <div class="template-card" onclick="applyTemplate('local')">
+                                    <h4>📍 本地达人型</h4>
+                                    <p>适合专注本地演出市场的票务代理</p>
+                                    <div class="template-preview">
+                                        <span class="preview-nickname">本地演出通小王</span>
+                                        <span class="preview-signature">XX城市演出一手资讯 | 你的专属票务管家</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>昵称类型：</label>
+                            <div class="form-indent">
+                                <label><input type="radio" name="nicknameType" value="name"> A. 本名+票务（小李·演出票）</label><br>
+                                <label><input type="radio" name="nicknameType" value="ip"> B. 领域+IP（戏剧情报站）</label><br>
+                                <label><input type="radio" name="nicknameType" value="professional"> C. 简洁专业（票务顾问David）</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nickname">您的昵称：</label>
+                            <input type="text" id="nickname" placeholder="请输入您的昵称" oninput="updatePersonaPreview()">
+                        </div>
+                        <div class="form-group">
+                            <label>头像选择：</label>
+                            <div class="form-indent">
+                                <label><input type="radio" name="avatarType" value="professional" onclick="updatePersonaPreview()"> 专业形象照</label><br>
+                                <label><input type="radio" name="avatarType" value="logo" onclick="updatePersonaPreview()"> 简洁Logo</label><br>
+                                <label><input type="radio" name="avatarType" value="casual" onclick="updatePersonaPreview()"> 休闲生活照</label><br>
+                                <label><input type="radio" name="avatarType" value="performance" onclick="updatePersonaPreview()"> 演出现场照</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature">个性签名：</label>
+                            <input type="text" id="signature" placeholder="专注XX演出票务 | 你的私人选座顾问" oninput="updatePersonaPreview()">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialty">专业领域：</label>
+                            <select id="specialty" onchange="updatePersonaPreview()">
+                                <option value="all">全品类</option>
+                                <option value="concert">演唱会</option>
+                                <option value="theater">话剧/舞台剧</option>
+                                <option value="sports">体育赛事</option>
+                                <option value="exhibition">展览</option>
+                                <option value="musical">音乐剧</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearsExperience">从业年限：</label>
+                            <select id="yearsExperience" onchange="updatePersonaPreview()">
+                                <option value="">请选择</option>
+                                <option value="1">1年以内</option>
+                                <option value="2-3">2-3年</option>
+                                <option value="3-5">3-5年</option>
+                                <option value="5+">5年以上</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>性别：</label>
+                            <div class="form-indent">
+                                <label><input type="radio" name="gender" value="male" onclick="updatePersonaPreview()"> 男</label><br>
+                                <label><input type="radio" name="gender" value="female" onclick="updatePersonaPreview()"> 女</label><br>
+                                <label><input type="radio" name="gender" value="neutral" onclick="updatePersonaPreview()"> 中性</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ageRange">年龄段：</label>
+                            <select id="ageRange" onchange="updatePersonaPreview()">
+                                <option value="">请选择</option>
+                                <option value="18-25">18-25岁</option>
+                                <option value="26-35">26-35岁</option>
+                                <option value="36-45">36-45岁</option>
+                                <option value="46+">46岁以上</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="region">所在地区：</label>
+                            <select id="region" onchange="updatePersonaPreview()">
+                                <option value="">请选择</option>
+                                <option value="beijing">北京</option>
+                                <option value="shanghai">上海</option>
+                                <option value="guangzhou">广州</option>
+                                <option value="shenzhen">深圳</option>
+                                <option value="hangzhou">杭州</option>
+                                <option value="nanjing">南京</option>
+                                <option value="wuhan">武汉</option>
+                                <option value="chengdu">成都</option>
+                                <option value="chongqing">重庆</option>
+                                <option value="other">其他城市</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicePromise">服务承诺：</label>
+                            <textarea id="servicePromise" rows="3" placeholder="例如：假一赔十、24小时在线服务、免费选座等" oninput="updatePersonaPreview()"></textarea>
+                        </div>
+                        <button class="btn btn-primary" onclick="savePersona()">保存人设</button>
+                    </div>
+                    
+                    <!-- 右侧：实时预览区域 -->
+                    <div class="persona-preview-container">
+                        <h4>👥 人设实时预览</h4>
+                        <div id="personaPreview" class="persona-preview">
+                            <div class="preview-avatar">
+                                <div id="avatarPreview" class="avatar-placeholder">👤</div>
+                            </div>
+                            <div class="preview-info">
+                                <h5 id="previewNickname">票务顾问小王</h5>
+                                <p id="previewSignature">专注演出票务10年 | 选座专家 | 靠谱为先</p>
+                                <div class="preview-details">
+                                    <p id="previewSpecialty">专业领域：全品类票务</p>
+                                    <p id="previewExperience">从业经验：5年以上</p>
+                                    <p id="previewGender">性别：中性</p>
+                                    <p id="previewAgeRange">年龄段：26-35岁</p>
+                                    <p id="previewRegion">所在地区：北京</p>
+                                </div>
+                                <div class="preview-service">
+                                    <h6>服务承诺：</h6>
+                                    <p id="previewPromise">假一赔十 | 24小时在线服务 | 免费选座</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-tips">
+                            <h6>💡 人设打造建议：</h6>
+                            <ul>
+                                <li>昵称要简单易记，包含核心业务</li>
+                                <li>个性签名突出专业优势和信任感</li>
+                                <li>服务承诺要具体，增强客户信任</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 朋友圈内容矩阵模拟 -->
+            <div class="sub-section">
+                <h3>朋友圈内容矩阵模拟</h3>
+                <p>请为7天的朋友圈填充内容，按照以下比例：</p>
+                <ul>
+                    <li>专业价值（40%）：演出知识、选座攻略等</li>
+                    <li>热度见证（30%）：订单截图、咨询量等</li>
+                    <li>个人温度（20%）：个人体验、现场照片等</li>
+                    <li>活动促销（10%）：限时优惠、稀缺票源等</li>
+                </ul>
+                
+                <!-- 朋友圈内容推荐 -->
+                <div class="content-recommendation">
+                    <h4>内容推荐</h4>
+                    <div class="recommendation-buttons">
+                        <button class="btn btn-secondary" onclick="generateRecommendation('value')">📚 专业价值内容</button>
+                        <button class="btn btn-secondary" onclick="generateRecommendation('hot')">🔥 热度见证内容</button>
+                        <button class="btn btn-secondary" onclick="generateRecommendation('personal')">❤️ 个人温度内容</button>
+                        <button class="btn btn-secondary" onclick="generateRecommendation('promotion')">🎁 活动促销内容</button>
+                    </div>
+                    <div id="recommendationResult" class="recommendation-result"></div>
+                </div>
+                
+                <!-- 简单的朋友圈模拟 -->
+                <div id="momentsContainer" class="moments-container">
+                    <!-- 这里将动态生成7天的朋友圈 -->
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="generateMoments()">生成朋友圈模板</button>
+                    <button class="btn btn-success" onclick="submitMoments()">提交朋友圈</button>
+                </div>
+            </div>
+            
+            <!-- 避坑指南 -->
+            <div class="sub-section">
+                <h3>避坑指南</h3>
+                <p>反面教材对比：</p>
+                <div class="feedback incorrect">
+                    <strong>错误：刷屏广告型</strong><br>
+                    连续发送多条相同的广告内容，没有任何价值信息，容易被用户屏蔽。
+                </div>
+                <div class="feedback incorrect mt-20">
+                    <strong>错误：虚假截图型</strong><br>
+                    使用明显的假订单截图或夸张的数据，容易失去用户信任。
+                </div>
+            </div>
+        </div>
+        
+        <!-- 模块二：小红书/抖音安全引流实战 -->
+        <div id="module2" class="section hidden">
+            <h2 class="section-title">📱 模块二：小红书/抖音安全引流实战</h2>
+            
+            <div class="sub-section">
+                <h3>平台选择与定位</h3>
+                <p>为您的“虚拟项目”选择最适合的1-2个平台：</p>
+                <div class="form-group">
+                    <label for="projectType">选择项目类型：</label>
+                    <select id="projectType">
+                        <option value="concert">演唱会</option>
+                        <option value="theater">话剧/舞台剧</option>
+                        <option value="sports">体育赛事</option>
+                        <option value="exhibition">展览</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>选择平台：</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="platform" value="xiaohongshu"> 小红书（适合演出推荐、攻略）</label><br>
+                        <label><input type="checkbox" name="platform" value="douyin"> 抖音（适合现场片段、抢票vlog）</label><br>
+                        <label><input type="checkbox" name="platform" value="douban"> 豆瓣（适合小众活动）</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="savePlatformChoice()">保存选择</button>
+            </div>
+            
+            <div class="sub-section">
+                <h3>“安全词”与“引流钩子”训练</h3>
+                <p>安全替换词库：</p>
+                <div class="safe-words-table-container">
+                    <table class="safe-words-table">
+                        <thead>
+                            <tr>
+                                <th>违规词</th>
+                                <th>安全替换词</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>买票</td>
+                                <td>怎么get、解锁</td>
+                            </tr>
+                            <tr>
+                                <td>找我</td>
+                                <td>戳戳、小窗</td>
+                            </tr>
+                            <tr>
+                                <td>低价</td>
+                                <td>性价比、好位置</td>
+                            </tr>
+                            <tr>
+                                <td>微信</td>
+                                <td>绿色聊天软件</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>钩子设计练习：</p>
+                <div class="form-group">
+                    <label>标题模板1：</label>
+                    <input type="text" id="hook1" placeholder="演唱会的______座位视角，想知道的姐妹可以。">
+                </div>
+                <div class="form-group">
+                    <label>标题模板2：</label>
+                    <input type="text" id="hook2" placeholder="看了______场演出后，我的______心得。">
+                </div>
+                <button class="btn btn-primary" onclick="checkHook()">检查钩子设计</button>
+            </div>
+            
+            <!-- 安全词检测功能 -->
+            <div class="sub-section">
+                <h3>安全词检测工具</h3>
+                <p>输入您的引流内容，系统会自动检测可能违规的词语：</p>
+                <div class="form-group">
+                    <label for="contentToCheck">请输入内容：</label>
+                    <textarea id="contentToCheck" rows="4" placeholder="请输入您要发布的引流内容..."></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="checkSafeWords()">🔍 检测违规词</button>
+                <div id="safeWordsResult" class="hidden"></div>
+            </div>
+            
+            <!-- 引流内容生成工具 -->
+            <div class="sub-section">
+                <h3>引流内容生成工具</h3>
+                <p>选择平台和内容类型，系统会为您生成适合的引流内容：</p>
+                <div class="form-group">
+                    <label for="contentPlatform">选择平台：</label>
+                    <select id="contentPlatform">
+                        <option value="xiaohongshu">小红书</option>
+                        <option value="douyin">抖音</option>
+                        <option value="douban">豆瓣</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contentGenre">选择内容类型：</label>
+                    <select id="contentGenre">
+                        <option value="strategy">攻略分享</option>
+                        <option value="experience">体验分享</option>
+                        <option value="tips">选座技巧</option>
+                        <option value="excitement">演出期待</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventName">演出名称（可选）：</label>
+                    <input type="text" id="eventName" placeholder="例如：周杰伦演唱会">
+                </div>
+                <button class="btn btn-primary" onclick="generateContent()">✨ 生成引流内容</button>
+                <div id="generatedContent" class="hidden"></div>
+            </div>
+            
+            <div class="sub-section">
+                <h3>从笔记到私信的路径模拟</h3>
+                <p>模拟发布一篇笔记后，收到“潜在客户”私信的场景：</p>
+                <div id="dmSimulation" class="dm-simulation">
+                    <p><strong>潜在客户：</strong>你好，想问一下演唱会的票怎么get？</p>
+                    <div class="dm-choices">
+                        <button class="choice-btn" onclick="dmResponse(1)">A. 直接回复价格："你好，XX演唱会的票XX元一张，需要吗？"</button>
+                        <button class="choice-btn" onclick="dmResponse(2)">B. 友好感谢→了解需求："你好！感谢关注～是想问哪场演唱会的票呢？大概需要几张，对位置有什么偏好吗？"</button>
+                        <button class="choice-btn" onclick="dmResponse(3)">C. 引导至微信："这里聊不太方便，你可以加我绿色聊天软件，我给你详细介绍。"</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 模块三：首次咨询转化对话模拟 -->
+        <div id="module3" class="section hidden">
+            <h2 class="section-title">💬 模块三：首次咨询转化对话模拟</h2>
+            
+            <div class="sub-section">
+                <h3>选择客户类型</h3>
+                <p>不同类型的客户需要不同的沟通策略：</p>
+                <div class="template-grid">
+                    <div class="template-card" onclick="selectCustomerType('price', event)">
+                        <h4>💰 价格敏感型</h4>
+                        <p>关注价格，喜欢优惠，经常货比三家</p>
+                    </div>
+                    <div class="template-card" onclick="selectCustomerType('quality', event)">
+                        <h4>🎯 质量敏感型</h4>
+                        <p>关注位置和体验，愿意为优质服务付费</p>
+                    </div>
+                    <div class="template-card" onclick="selectCustomerType('urgent', event)">
+                        <h4>⏱️ 紧急需求型</h4>
+                        <p>需要立即出票，时间压力大</p>
+                    </div>
+                    <div class="template-card" onclick="selectCustomerType('hesitant', event)">
+                        <h4>🤔 犹豫型</h4>
+                        <p>犹豫不决，需要更多信息和安全感</p>
+                    </div>
+                    <div class="template-card" onclick="selectCustomerType('group', event)">
+                        <h4>👥 团体购买型</h4>
+                        <p>需要多张票，关注团体优惠和协调</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sub-section">
+                <h3>对话模拟</h3>
+                <div class="progress-section small">
+                    <div class="progress-row">
+                        <span>对话进度</span>
+                        <span id="chatProgress">0/0</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="chatProgressBar" class="progress-fill module3-fill"></div>
+                    </div>
+                </div>
+                <div class="chat-container" id="chatContainer">
+                    <div class="chat-message customer-message">
+                        <strong>客户：</strong>你这个票怎么卖？
+                    </div>
+                </div>
+                
+                <div class="chat-choices" id="chatChoices">
+                    <button class="choice-btn" onclick="processChatChoice(1)">A. 直接报价："XX演唱会的票XX元一张，需要吗？"</button>
+                    <button class="choice-btn" onclick="processChatChoice(2)">B. 反客为主，了解需求："您好！是想问XX日期的XX演出吗？大概需要几张，对位置有什么偏好吗？"</button>
+                    <button class="choice-btn" onclick="processChatChoice(3)">C. 询问预算："请问您的预算是多少？我可以给您推荐合适的票。"</button>
+                </div>
+            </div>
+            
+            <div id="feedback" class="feedback hidden"></div>
+            <div id="achievement" class="achievement hidden"></div>
+            
+            <button class="btn btn-primary mt-20" onclick="restartChat()">重新开始对话</button>
+        </div>
+    </div>
+    
+    <script>
+        // 全局变量
+        let currentModule = 0;
+        let chatStep = 0;
+        let currentCustomerType = 'quality'; // 默认质量敏感型
+        let progress = {
+            module1: 0,
+            module2: 0,
+            module3: 0
+        };
+        
+        // 客户类型对应的对话模板
+        const customerTemplates = {
+            price: {
+                initial: '你这个票怎么卖？有没有优惠？',
+                steps: [
+                    {
+                        question: '是的，我想要1张下周六的票，你们这里有没有优惠？',
+                        choices: [
+                            { text: 'A. 直接报价："XX演唱会的票XX元一张，已经是最低价了"', correct: false, feedback: '错误！直接报价会让价格敏感型客户觉得没有议价空间，应该先了解需求再提供优惠方案。' },
+                            { text: 'B. 提供优惠："您好！我们现在有满减活动，购买1张减XX元，2张减XX元"', correct: true, feedback: '正确！价格敏感型客户对优惠信息最感兴趣，提供具体的优惠方案可以吸引他们继续沟通。' },
+                            { text: 'C. 询问预算："请问您的预算大概是多少？我可以给您推荐合适的票。"', correct: false, feedback: '错误！价格敏感型客户通常有明确的预算，应该直接提供优惠信息。' }
+                        ]
+                    },
+                    {
+                        question: '这个优惠力度不大啊，能不能再便宜点？',
+                        choices: [
+                            { text: 'A. 拒绝降价："抱歉，这个价格已经是最低了，不能再便宜了"', correct: false, feedback: '错误！直接拒绝会让客户感到失望，可能会流失这个订单。' },
+                            { text: 'B. 提供额外价值："我们的价格已经很优惠了，而且还提供免费选座和优先入场的服务"', correct: true, feedback: '正确！提供额外价值可以让客户觉得物有所值，而不是简单的降价。' },
+                            { text: 'C. 妥协降价："那好吧，我再给您便宜XX元，您看可以吗？"', correct: false, feedback: '错误！轻易降价会让客户觉得还有议价空间，可能会继续要求降价。' }
+                        ]
+                    }
+                ]
+            },
+            quality: {
+                initial: '你这个票怎么卖？位置好不好？',
+                steps: [
+                    {
+                        question: '是的，我想要2张下周六的票，最好是内场的位置。',
+                        choices: [
+                            { text: 'A. 直接报价："内场票XX元一张，两张一共XX元"', correct: false, feedback: '错误！质量敏感型客户更关注位置和体验，应该先介绍位置优势再报价。' },
+                            { text: 'B. 建立专业形象："好的，我给您发一张座位图，您可以看看喜欢哪个区域，不同区域的视野和体验都不一样"', correct: true, feedback: '正确！建立专业形象可以增强客户的信任感，让客户觉得你是专业的票务顾问。' },
+                            { text: 'C. 询问预算："内场位置有不同的价格区间，请问您的预算大概是多少？"', correct: false, feedback: '错误！质量敏感型客户更关注体验，应该先介绍位置优势再考虑预算。' }
+                        ]
+                    },
+                    {
+                        question: '这个票保真吗？我之前买过假票。',
+                        choices: [
+                            { text: 'A. 保证保真："放心，绝对保真，假一赔十"', correct: false, feedback: '错误！空口保证很难让客户信服，应该提供具体的凭证和保障。' },
+                            { text: 'B. 凭证+流程+共情："我理解您的担心，这是我们的出票凭证，我们支持进场后确认收货，做这行X年靠的就是口碑"', correct: true, feedback: '正确！使用"三板斧"（凭证+流程+共情）可以有效消除客户的疑虑，建立信任感。' },
+                            { text: 'C. 转移话题："我们的票都是正规渠道来的，您不用担心"', correct: false, feedback: '错误！转移话题会让客户更加怀疑，应该正面回应客户的疑虑。' }
+                        ]
+                    }
+                ]
+            },
+            urgent: {
+                initial: '你好，我现在急需两张今天晚上的票，能不能马上出票？',
+                steps: [
+                    {
+                        question: '太好了！我需要两张内场的票，能不能1小时内出票？',
+                        choices: [
+                            { text: 'A. 保证时间："没问题，1小时内肯定出票"', correct: false, feedback: '错误！不要轻易承诺无法保证的时间，万一出现意外会影响客户信任。' },
+                            { text: 'B. 明确流程："我会尽快为您处理，正常情况下30分钟内可以出票，我会第一时间通知您"', correct: true, feedback: '正确！明确流程和时间可以给客户安全感，同时给自己留有余地。' },
+                            { text: 'C. 询问信息："请问您的联系方式是什么？我出票后马上联系您"', correct: false, feedback: '错误！紧急需求型客户最关注的是时间，应该先回应时间问题再询问联系方式。' }
+                        ]
+                    },
+                    {
+                        question: '好的，我现在付款，你一定要尽快出票啊！',
+                        choices: [
+                            { text: 'A. 确认收款："收到，我会马上为您出票"', correct: false, feedback: '错误！只确认收款不够，应该提供更详细的信息让客户放心。' },
+                            { text: 'B. 提供进度："好的，您的付款已收到，我现在开始为您出票，预计20分钟内完成，出票后会立即发送电子票到您的邮箱和手机"', correct: true, feedback: '正确！提供详细的进度信息可以让紧急需求型客户感到安心，知道自己的订单正在处理中。' },
+                            { text: 'C. 感谢信任："感谢您的信任，我会尽快为您出票"', correct: false, feedback: '错误！紧急需求型客户更关注结果，应该提供具体的进度信息。' }
+                        ]
+                    }
+                ]
+            },
+            hesitant: {
+                initial: '你好，我想问一下XX演唱会的票，现在还有吗？',
+                steps: [
+                    {
+                        question: '还有票啊，那位置怎么样？会不会很偏？',
+                        choices: [
+                            { text: 'A. 保证位置："位置很好，绝对不偏，您放心吧"', correct: false, feedback: '错误！空口保证很难让犹豫型客户信服，应该提供具体的位置信息。' },
+                            { text: 'B. 详细介绍："我们现在有中间区域的票，视野非常好，我可以给您发一张座位图，您自己看看位置"', correct: true, feedback: '正确！提供详细的位置信息可以帮助犹豫型客户做出决策，减少他们的疑虑。' },
+                            { text: 'C. 催促决策："位置还不错，您要的话尽快决定，不然就没了"', correct: false, feedback: '错误！犹豫型客户需要更多时间考虑，催促可能会让他们感到压力而放弃。' }
+                        ]
+                    },
+                    {
+                        question: '那价格呢？会不会很贵？我再考虑考虑吧...',
+                        choices: [
+                            { text: 'A. 直接降价："如果您今天购买，我可以给您便宜XX元"', correct: false, feedback: '错误！轻易降价会让客户觉得还有议价空间，可能会继续犹豫。' },
+                            { text: 'B. 比较优势："我们的价格和其他渠道相比已经很优惠了，而且我们提供免费选座和优先入场的服务，性价比非常高"', correct: true, feedback: '正确！通过比较优势可以让犹豫型客户看到价值，帮助他们做出决策。' },
+                            { text: 'C. 尊重选择："好的，您考虑清楚后再联系我"', correct: false, feedback: '错误！完全不争取可能会流失这个订单，应该提供更多信息帮助客户决策。' }
+                        ]
+                    }
+                ]
+            },
+            group: {
+                initial: '你好，我们公司想组织员工去看演唱会，需要20张票，有没有团体优惠？',
+                steps: [
+                    {
+                        question: '20张啊，那有没有团体优惠？可以便宜多少？',
+                        choices: [
+                            { text: 'A. 直接报价："团体票XX元一张，比散票便宜XX元"', correct: false, feedback: '错误！团体购买型客户通常有预算限制，应该先了解他们的需求再提供优惠方案。' },
+                            { text: 'B. 了解需求："您好！请问您需要哪个日期的票？对位置有什么要求吗？我们可以根据您的需求制定最优惠的方案"', correct: true, feedback: '正确！了解客户的具体需求可以提供更精准的优惠方案，同时让客户感到被重视。' },
+                            { text: 'C. 提供套餐："我们有团体套餐，20张票可以享受9折优惠，还送2张免费票"', correct: false, feedback: '错误！应该先了解客户的需求再提供套餐，避免提供不符合客户需求的方案。' }
+                        ]
+                    },
+                    {
+                        question: '我们需要下周六的票，位置最好集中在一起，优惠力度能不能再大一点？',
+                        choices: [
+                            { text: 'A. 拒绝优惠："抱歉，这个优惠力度已经是最大的了"', correct: false, feedback: '错误！直接拒绝会让客户感到失望，可能会流失这个大额订单。' },
+                            { text: 'B. 灵活调整："我们可以为您安排集中的位置，同时提供8.5折的优惠，这是我们能给到的最大优惠了"', correct: true, feedback: '正确！灵活调整优惠方案可以满足团体购买型客户的需求，同时保持合理的利润空间。' },
+                            { text: 'C. 妥协到底："那好吧，我给您8折优惠，您看可以吗？"', correct: false, feedback: '错误！过度妥协会影响利润，而且可能会让客户觉得还有议价空间。' }
+                        ]
+                    }
+                ]
+            }
+        };
+        
+        // 显示模块
+        function showModule(module) {
+            currentModule = module;
+            
+            // 隐藏所有模块
+            document.getElementById('moduleContent').classList.add('hidden');
+            document.getElementById('module1').classList.add('hidden');
+            document.getElementById('module2').classList.add('hidden');
+            document.getElementById('module3').classList.add('hidden');
+            
+            // 显示选中的模块
+            if (module === 0) {
+                document.getElementById('moduleContent').classList.remove('hidden');
+            } else {
+                document.getElementById('module' + module).classList.remove('hidden');
+            }
+            
+            // 如果是模块三，初始化对话
+            if (module === 3) {
+                restartChat();
+            }
+        }
+        
+        // 模块一功能
+        function savePersona() {
+            // 简单的验证
+            const nickname = document.getElementById('nickname').value;
+            const signature = document.getElementById('signature').value;
+            
+            if (nickname && signature) {
+                progress.module1 += 30;
+                updateProgress();
+                showMessage('人设信息保存成功！', 'success');
+            } else {
+                showMessage('请填写完整的人设信息', 'error');
+            }
+        }
+        
+        // 实时更新人设预览
+        function updatePersonaPreview() {
+            const nickname = document.getElementById('nickname').value;
+            const signature = document.getElementById('signature').value;
+            const specialty = document.getElementById('specialty').value;
+            const yearsExperience = document.getElementById('yearsExperience').value;
+            const servicePromise = document.getElementById('servicePromise').value;
+            const avatarType = document.querySelector('input[name="avatarType"]:checked');
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const ageRange = document.getElementById('ageRange').value;
+            const region = document.getElementById('region').value;
+            
+            // 更新昵称
+            if (nickname) {
+                document.getElementById('previewNickname').textContent = nickname;
+            } else {
+                document.getElementById('previewNickname').textContent = '票务顾问小王';
+            }
+            
+            // 更新个性签名
+            if (signature) {
+                document.getElementById('previewSignature').textContent = signature;
+            } else {
+                document.getElementById('previewSignature').textContent = '专注演出票务10年 | 选座专家 | 靠谱为先';
+            }
+            
+            // 更新专业领域
+            const specialtyText = {
+                'all': '全品类票务',
+                'concert': '演唱会',
+                'theater': '话剧/舞台剧',
+                'sports': '体育赛事',
+                'exhibition': '展览',
+                'musical': '音乐剧'
+            };
+            document.getElementById('previewSpecialty').textContent = `专业领域：${specialtyText[specialty]}`;
+            
+            // 更新从业经验
+            if (yearsExperience) {
+                document.getElementById('previewExperience').textContent = `从业经验：${yearsExperience}`;
+            } else {
+                document.getElementById('previewExperience').textContent = '从业经验：5年以上';
+            }
+            
+            // 更新性别
+            if (gender) {
+                const genderText = {
+                    'male': '男',
+                    'female': '女',
+                    'neutral': '中性'
+                };
+                document.getElementById('previewGender').textContent = `性别：${genderText[gender.value]}`;
+            } else {
+                document.getElementById('previewGender').textContent = '性别：中性';
+            }
+            
+            // 更新年龄段
+            if (ageRange) {
+                document.getElementById('previewAgeRange').textContent = `年龄段：${ageRange}`;
+            } else {
+                document.getElementById('previewAgeRange').textContent = '年龄段：26-35岁';
+            }
+            
+            // 更新所在地区
+            const regionText = {
+                'beijing': '北京',
+                'shanghai': '上海',
+                'guangzhou': '广州',
+                'shenzhen': '深圳',
+                'hangzhou': '杭州',
+                'nanjing': '南京',
+                'wuhan': '武汉',
+                'chengdu': '成都',
+                'chongqing': '重庆',
+                'other': '其他城市'
+            };
+            if (region) {
+                document.getElementById('previewRegion').textContent = `所在地区：${regionText[region]}`;
+            } else {
+                document.getElementById('previewRegion').textContent = '所在地区：北京';
+            }
+            
+            // 更新服务承诺
+            if (servicePromise) {
+                document.getElementById('previewPromise').textContent = servicePromise;
+            } else {
+                document.getElementById('previewPromise').textContent = '假一赔十 | 24小时在线服务 | 免费选座';
+            }
+            
+            // 更新头像预览
+            if (avatarType) {
+                const avatarEmojis = {
+                    'professional': '👨‍💼',
+                    'logo': '🎫',
+                    'casual': '😊',
+                    'performance': '🎤'
+                };
+                document.getElementById('avatarPreview').textContent = avatarEmojis[avatarType.value] || '👤';
+            }
+        }
+        
+        // 应用人设模板
+        function applyTemplate(type) {
+            const templates = {
+                professional: {
+                    nickname: '票务顾问小王',
+                    signature: '专注演出票务10年 | 选座专家 | 靠谱为先',
+                    specialty: 'all',
+                    yearsExperience: '5+',
+                    servicePromise: '假一赔十 | 24小时在线服务 | 免费选座',
+                    avatarType: 'professional',
+                    gender: 'male',
+                    ageRange: '26-35',
+                    region: 'beijing'
+                },
+                friend: {
+                    nickname: '小王·爱演出',
+                    signature: '分享每一场精彩演出 | 我的票你放心',
+                    specialty: 'concert',
+                    yearsExperience: '3-5',
+                    servicePromise: '诚信经营 | 优质票源 | 贴心服务',
+                    avatarType: 'casual',
+                    gender: 'female',
+                    ageRange: '18-25',
+                    region: 'shanghai'
+                },
+                insider: {
+                    nickname: '演出内部渠道小王',
+                    signature: '独家资源 | 稀缺票源 | 第一时间获取',
+                    specialty: 'all',
+                    yearsExperience: '5+',
+                    servicePromise: '独家票源 | 优先出票 | 售后保障',
+                    avatarType: 'logo',
+                    gender: 'neutral',
+                    ageRange: '36-45',
+                    region: 'guangzhou'
+                },
+                enthusiast: {
+                    nickname: '演出达人小王',
+                    signature: '用我的热情带你看遍世界演出 | 靠谱票务',
+                    specialty: 'concert',
+                    yearsExperience: '2-3',
+                    servicePromise: '热爱演出 | 专业推荐 | 用心服务',
+                    avatarType: 'performance',
+                    gender: 'male',
+                    ageRange: '18-25',
+                    region: 'shenzhen'
+                },
+                local: {
+                    nickname: '本地演出通小王',
+                    signature: 'XX城市演出一手资讯 | 你的专属票务管家',
+                    specialty: 'all',
+                    yearsExperience: '3-5',
+                    servicePromise: '本地资源 | 快速出票 | 贴心服务',
+                    avatarType: 'casual',
+                    gender: 'female',
+                    ageRange: '26-35',
+                    region: 'hangzhou'
+                }
+            };
+            
+            const template = templates[type];
+            if (template) {
+                document.getElementById('nickname').value = template.nickname;
+                document.getElementById('signature').value = template.signature;
+                document.getElementById('specialty').value = template.specialty;
+                document.getElementById('yearsExperience').value = template.yearsExperience;
+                document.getElementById('servicePromise').value = template.servicePromise;
+                document.getElementById('ageRange').value = template.ageRange;
+                document.getElementById('region').value = template.region;
+                
+                // 选择头像类型和性别
+                document.querySelector(`input[name="avatarType"][value="${template.avatarType}"]`).checked = true;
+                document.querySelector(`input[name="gender"][value="${template.gender}"]`).checked = true;
+                
+                // 更新预览
+                updatePersonaPreview();
+                
+                showMessage('人设模板应用成功！', 'success');
+            }
+        }
+        
+        // 生成朋友圈内容推荐
+        function generateRecommendation(type) {
+            const recommendations = {
+                value: [
+                    '今天给大家分享一个选座小技巧：演唱会中间区域10-15排，视野和音效都是最佳的！',
+                    '话剧演出的最佳位置通常是3-8排，既能看清演员表情，又能感受到舞台氛围。',
+                    '体育赛事选座攻略：篮球选篮筐后面，足球选中线附近，视野最开阔！',
+                    '看演出一定要提前进场，不仅能找到好位置，还能感受到现场氛围的逐渐升温。',
+                    '音乐剧选座建议：如果喜欢音乐，选前几排听音效；如果喜欢剧情，选中间区域看整体表演。',
+                    '户外音乐节攻略：穿舒适的鞋子，带好防晒和雨具，提前规划好路线和休息区。',
+                    '演唱会VIP票值不值得买？除了位置好，通常还有专属通道、纪念品和可能的后台互动机会！',
+                    '如何辨别假票？看票纸质量、二维码清晰度、防伪标记，最好从正规渠道购买。',
+                    '演唱会选座避坑指南：尽量避开视线盲区，比如舞台两侧或柱子后面的位置！',
+                    '剧场礼仪小知识：不要在演出过程中拍照录像，手机要调静音哦～',
+                    '演唱会应援物品清单：荧光棒、应援灯、润喉糖、充电宝，一个都不能少！',
+                    '体育赛事观赛提示：提前了解场馆规定，有些场馆禁止携带食品和大号背包。',
+                    '话剧演出选座技巧：如果想体验沉浸感，选前排中间；如果想俯瞰整体舞台，选楼座中间。',
+                    '如何买到热门演出的票？提前设置好闹钟，开票前10分钟就进入购票页面准备！',
+                    '音乐节穿搭建议：轻便舒适为主，穿适合长时间站立的鞋子，注意防晒和保暖。',
+                    '演出延期/取消怎么办？第一时间联系购票渠道，了解退票或改签政策。'
+                ],
+                hot: [
+                    '今天的咨询量突破50+，感谢大家的信任！XX演唱会的票还有少量余票哦~',
+                    '刚刚又成功出票2张VIP票，客户非常满意！要票的朋友抓紧时间了！',
+                    'XX乐队的票太火爆了，不到2小时就卖出了30+张，手慢无！',
+                    '感谢老客户的转介绍，今天又接到5个新订单，继续加油！',
+                    '昨晚XX演唱会加场消息一发布，瞬间接到30+咨询，大家的热情太感动了！',
+                    '今天帮10位客户买到了心仪的票，看着他们的反馈，累并快乐着！',
+                    'XX歌手的门票预售第一天就卖出了80%，还没买票的朋友要抓紧啦！',
+                    '感谢大家的支持，这个月的出票量突破200张了！继续为大家提供优质服务~',
+                    '刚发出的XX演出消息，5分钟内就接到15个咨询，大家的反应太热烈了！',
+                    '今天又是忙碌的一天，从早到晚一直在回复咨询和出票，虽然累但很充实！',
+                    '客户反馈：“买到了心仪的位置，太开心了！” 能帮到大家真的很有成就感！',
+                    'XX演唱会的票今天刚放出，就被老客户预定了10张，感谢大家的信任！',
+                    '刚刚统计了一下，这个月已经为50+客户买到了心仪的演出票，继续加油！',
+                    '早上一打开手机，就看到12条未读消息，都是咨询XX演出的，太火爆了！',
+                    '客户转介绍的新客户今天又下单了，感谢大家的认可和支持！',
+                    '今天帮一位客户抢到了最后一张XX演出的VIP票，他激动得连连道谢，真的很开心！'
+                ],
+                personal: [
+                    '今天去现场看了XX演唱会的彩排，舞台效果简直太棒了，期待正式演出！',
+                    '和朋友一起去看了话剧《XX》，演员的表演太精彩了，强烈推荐！',
+                    '今天天气虽然不好，但看到客户拿到票后的笑容，一切都值得了！',
+                    '工作之余也要享受生活，今天给自己买了一张喜欢的演出票，放松一下。',
+                    '还记得第一次看演唱会的激动心情，现在能帮更多人实现看演出的愿望，真的很开心！',
+                    '今天在票务中心遇到一位80岁的阿姨，她说想圆年轻时的音乐梦，太感动了，必须帮她找到票！',
+                    '刚刚送票给一位外地来的粉丝，她激动得哭了，说这是她第一次看偶像的演唱会，成就感满满！',
+                    '周末去看了XX音乐剧，演员们的敬业精神让人敬佩，回来立刻给客户推荐了这个演出。',
+                    '今天路过XX体育馆，看到工作人员正在搭建舞台，期待XX演唱会的到来！',
+                    '翻到去年看XX演唱会的照片，当时的场景还历历在目，今年的演出一定更加精彩！',
+                    '今天帮一位妈妈买到了亲子剧场的票，她开心地说终于能陪孩子看演出了，很温暖的瞬间！',
+                    '工作到很晚，看到客户发来的感谢消息，瞬间觉得一切都值得了！',
+                    '今天和同事一起去看了新上映的话剧，剧情和表演都很棒，推荐给大家！',
+                    '还记得刚开始做票务时的紧张，现在已经能从容应对各种情况了，成长的感觉真好！',
+                    '今天收到客户送的小礼物，感谢我的帮忙，真的很感动！',
+                    '周末去看演出，遇到了之前服务过的客户，亲切地和我打招呼，这种被记住的感觉很棒！'
+                ],
+                promotion: [
+                    '限时优惠！XX演唱会的票现在下单立减50元，仅限前20名！',
+                    '稀缺票源！XX明星的见面会门票只剩5张，先到先得！',
+                    '团购优惠！3张以上XX演出票享受9折优惠，快和朋友一起行动吧！',
+                    '粉丝福利！关注并转发这条朋友圈，抽3位朋友送演出周边一份！',
+                    '新年特惠！1月1日前下单任意演出票，都可以获得精美演出纪念册一本！',
+                    '会员专享！老客户购买XX演出票可享受8.5折优惠，还能优先选座！',
+                    '紧急通知！XX演出增加了一场，现在开始接受预订，价格更优惠！',
+                    '双11福利！全场演出票满200减30，满500减100，机不可失！',
+                    '限时秒杀！今晚8点，XX演唱会的票将进行限时秒杀，最低5折起！',
+                    '粉丝专属！转发此条朋友圈并@3位好友，即可获得XX演出的优先购票权！',
+                    '早鸟优惠！现在预订XX演出的票，享受8折优惠，还送精美海报一张！',
+                    '周末特惠！周六周日下单的客户，都可以获得免费的演出周边一份！',
+                    '专属福利！为庆祝XX演出即将开演，前50名购票的客户享受7.5折优惠！',
+                    '感恩回馈！老客户带新客户购买演出票，双方都可以获得20元优惠券！',
+                    '最后机会！XX演出的票只剩最后10张，错过就要等明年了！',
+                    '节日福利！XX节期间购票，享受双重优惠：立减50元+送精美礼品！'
+                ]
+            };
+            
+            const recs = recommendations[type];
+            if (recs) {
+                const randomIndex = Math.floor(Math.random() * recs.length);
+                const resultDiv = document.getElementById('recommendationResult');
+                resultDiv.innerHTML = `
+                    <div class="recommendation-header">
+                        <span class="recommendation-type">${type === 'value' ? '📚 专业价值' : type === 'hot' ? '🔥 热度见证' : type === 'personal' ? '❤️ 个人温度' : '🎁 活动促销'}</span>
+                        <button class="btn btn-sm btn-secondary" onclick="copyRecommendation()">📋 复制</button>
+                    </div>
+                    <p class="recommendation-text">${recs[randomIndex]}</p>
+                    <div class="recommendation-tip">💡 提示：可以根据实际情况修改内容中的演出名称和细节哦~</div>
+                `;
+                resultDiv.classList.remove('hidden');
+            }
+        }
+        
+        // 复制推荐内容
+        function copyRecommendation() {
+            const recommendationText = document.querySelector('.recommendation-text');
+            if (recommendationText) {
+                const text = recommendationText.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    showMessage('内容已复制到剪贴板！', 'success');
+                }).catch(err => {
+                    showMessage('复制失败，请手动复制', 'error');
+                });
+            }
+        }
+        
+        function generateMoments() {
+            const container = document.getElementById('momentsContainer');
+            container.innerHTML = '';
+            
+            // 生成7天的朋友圈模板
+            for (let i = 1; i <= 7; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'moment-day';
+                
+                dayDiv.innerHTML = `
+                    <h4>第${i}天</h4>
+                    <div class="moment-type-radio">
+                        <label><input type="radio" name="momentType${i}" value="value"> 专业价值</label>
+                        <label><input type="radio" name="momentType${i}" value="hot"> 热度见证</label>
+                        <label><input type="radio" name="momentType${i}" value="personal"> 个人温度</label>
+                        <label><input type="radio" name="momentType${i}" value="promotion"> 活动促销</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="publishTime${i}">发布时间：</label>
+                        <select id="publishTime${i}" class="publish-time">
+                            <option value="morning">08:00-10:00 早高峰</option>
+                            <option value="noon">12:00-14:00 午休</option>
+                            <option value="afternoon">17:00-19:00 晚高峰</option>
+                            <option value="evening">20:00-22:00 休闲时间</option>
+                            <option value="late">22:00-23:00 睡前</option>
+                        </select>
+                        <div class="time-tip hidden" id="timeTip${i}"></div>
+                    </div>
+                    <textarea class="moment-content" placeholder="请输入朋友圈内容"></textarea>
+                `;
+                
+                container.appendChild(dayDiv);
+            }
+            
+            // 添加时间选择事件监听
+            addTimeSelectionListeners();
+            
+            progress.module1 += 20;
+            updateProgress();
+        }
+        
+        // 添加时间选择事件监听
+        function addTimeSelectionListeners() {
+            const timeSelectors = document.querySelectorAll('.publish-time');
+            timeSelectors.forEach((selector, index) => {
+                selector.addEventListener('change', function() {
+                    const timeTip = document.getElementById(`timeTip${index + 1}`);
+                    const timeValue = this.value;
+                    
+                    // 根据选择的时间显示不同的提示
+                    const timeTips = {
+                        morning: '💡 早高峰时段用户刚起床，适合发布实用信息或早间问候，用户查看频率高！',
+                        noon: '🍱 午休时段用户有空闲时间浏览朋友圈，适合发布专业内容或轻松分享！',
+                        afternoon: '🚗 晚高峰时段用户通勤路上，适合发布简短有吸引力的内容或促销信息！',
+                        evening: '📱 休闲时间用户有较多时间浏览，适合发布详细内容、活动信息或个人分享！',
+                        late: '🌙 睡前时段用户容易产生情感共鸣，适合发布温暖的个人故事或晚安问候！'
+                    };
+                    
+                    timeTip.textContent = timeTips[timeValue];
+                    timeTip.classList.remove('hidden');
+                });
+            });
+        }
+        
+        function submitMoments() {
+            // 简单的验证
+            const textareas = document.querySelectorAll('#momentsContainer textarea');
+            const timeSelectors = document.querySelectorAll('.publish-time');
+            let filledCount = 0;
+            let timeSelectionCount = 0;
+            
+            textareas.forEach(ta => {
+                if (ta.value.trim()) {
+                    filledCount++;
+                }
+            });
+            
+            timeSelectors.forEach(selector => {
+                if (selector.value) {
+                    timeSelectionCount++;
+                }
+            });
+            
+            if (filledCount >= 3) {
+                // 计算定时发布的得分
+                let timingScore = 0;
+                if (timeSelectionCount >= filledCount) {
+                    timingScore = 10; // 所有填写内容都选择了发布时间
+                } else if (timeSelectionCount >= filledCount / 2) {
+                    timingScore = 5; // 一半以上内容选择了发布时间
+                }
+                
+                // 更新进度
+                progress.module1 = 100 + timingScore;
+                updateProgress();
+                
+                showMessage('朋友圈提交成功！你已经完成了模块一的学习', 'success');
+                
+                // 根据定时发布的情况显示不同的成就
+                if (timingScore === 10) {
+                    showAchievement('恭喜你完成了模块一的学习！获得了「专业人设打造者」勋章和「定时发布达人」称号！');
+                } else if (timingScore === 5) {
+                    showAchievement('恭喜你完成了模块一的学习！获得了「专业人设打造者」勋章和「定时发布初学者」称号！');
+                } else {
+                    showAchievement('恭喜你完成了模块一的学习！获得了「专业人设打造者」勋章！');
+                }
+            } else {
+                showMessage('请至少填写3天的朋友圈内容', 'error');
+            }
+        }
+        
+        // 模块二功能
+        function savePlatformChoice() {
+            const projectType = document.getElementById('projectType').value;
+            const platforms = document.querySelectorAll('input[name="platform"]:checked');
+            
+            if (platforms.length > 0) {
+                progress.module2 += 30;
+                updateProgress();
+                showMessage('平台选择保存成功！', 'success');
+            } else {
+                showMessage('请至少选择一个平台', 'error');
+            }
+        }
+        
+        function checkHook() {
+            const hook1 = document.getElementById('hook1').value;
+            const hook2 = document.getElementById('hook2').value;
+            
+            if (hook1 && hook2) {
+                progress.module2 += 30;
+                updateProgress();
+                showMessage('钩子设计检查通过！', 'success');
+            } else {
+                showMessage('请完成钩子设计练习', 'error');
+            }
+        }
+        
+        function dmResponse(choice) {
+            const feedback = document.getElementById('feedback');
+            feedback.classList.remove('hidden');
+            
+            if (choice === 2) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = '<strong>正确！</strong><br>友好感谢并了解需求是建立信任的第一步，避免直接推销让客户产生反感。';
+                progress.module2 = 100;
+                updateProgress();
+                showMessage('私信回复正确！你已经完成了模块二的学习', 'success');
+                showAchievement('恭喜你完成了模块二的学习！获得了「引流专家」勋章');
+            } else {
+                feedback.className = 'feedback incorrect';
+                if (choice === 1) {
+                    feedback.innerHTML = '<strong>错误！</strong><br>直接报价会让客户感到突兀，应该先了解需求再提供相应的服务。';
+                } else {
+                    feedback.innerHTML = '<strong>错误！</strong><br>过早引导到微信会让客户产生警惕，应该先在平台内建立基本信任。';
+                }
+            }
+        }
+        
+        // 安全词检测功能
+        function checkSafeWords() {
+            const content = document.getElementById('contentToCheck').value;
+            const resultDiv = document.getElementById('safeWordsResult');
+            
+            // 违规词库
+            const unsafeWords = {
+                '买票': '怎么get、解锁',
+                '找我': '戳戳、小窗',
+                '低价': '性价比、好位置',
+                '微信': '绿色聊天软件',
+                '卖票': '分享渠道、解锁方式',
+                '购票': '获取方式',
+                '票源': '渠道',
+                '加我': '戳我'
+            };
+            
+            let foundUnsafe = false;
+            let resultHTML = '<div class="feedback">';
+            
+            // 检测违规词
+            for (const [unsafe, safe] of Object.entries(unsafeWords)) {
+                if (content.includes(unsafe)) {
+                    foundUnsafe = true;
+                    resultHTML += `<p><strong>⚠️ 发现违规词：</strong>"${unsafe}" → <strong>建议替换为：</strong>"${safe}"</p>`;
+                }
+            }
+            
+            if (!foundUnsafe) {
+                resultHTML += '<p class="feedback correct">✅ 未发现违规词，内容安全！</p>';
+                progress.module2 += 15;
+                updateProgress();
+            }
+            
+            resultHTML += '</div>';
+            resultDiv.innerHTML = resultHTML;
+            resultDiv.classList.remove('hidden');
+            
+            showMessage('安全词检测完成！', 'success');
+        }
+        
+        // 引流内容生成工具
+        function generateContent() {
+            const platform = document.getElementById('contentPlatform').value;
+            const genre = document.getElementById('contentGenre').value;
+            const eventName = document.getElementById('eventName').value || 'XX演出';
+            const resultDiv = document.getElementById('generatedContent');
+            
+            // 不同平台和类型的内容模板
+            const contentTemplates = {
+                xiaohongshu: {
+                    strategy: [
+                        `${eventName}超全攻略！从抢票到入场的一站式指南 🌟\n\n- 抢票时间：提前设置提醒，准点蹲守\n- 选座技巧：推荐XX区域，视野超棒\n- 入场准备：带好身份证，提前1小时到达\n\n想要了解更多细节的姐妹，可以戳戳我哦～`,
+                        `看了10+场演出总结的选座攻略！${eventName}必看 👀\n\n前排优势：近距离接触偶像，互动机会多\n中场优势：音效最佳，整体视觉好\n山顶优势：性价比高，看全场效果\n\n纠结选座的姐妹可以戳我，给你最实在的建议～`
+                    ],
+                    experience: [
+                        `${eventName}现场体验分享！太震撼了 🎉\n\n终于等到了这场期待已久的演出，现场氛围简直燃炸了！\n\n- 舞台效果：灯光秀太炫酷了\n- 音效：环绕声效果超棒\n- 互动：偶像和观众互动超有诚意\n\n错过的姐妹不用遗憾，下次有好演出我会第一时间分享～`,
+                        `昨天去看了${eventName}，这几个细节太戳我了 💖\n\n1. 偶像的现场唱功真的绝了，比录音棚还好听\n2. 粉丝们的大合唱太感动了\n3. 现场的应援灯海太美了\n\n想要了解更多演出信息的姐妹可以戳我哦～`
+                    ],
+                    tips: [
+                        `${eventName}选座避坑指南！这些位置千万不要选 ❌\n\n1. 舞台两侧太偏，可能看不到完整表演\n2. 后排角落视野受限\n3. 音响旁边太吵，影响体验\n\n想要选到好位置的姐妹可以戳我，给你最专业的建议～`,
+                        `${eventName}入场必备清单！看完少走弯路 ✅\n\n1. 身份证/电子票\n2. 充电宝（现场人多，充电口少）\n3. 小风扇（夏天必备）\n4. 荧光棒（可以自带或现场买）\n\n还有更多细节想知道的姐妹，可以戳戳我～`
+                    ],
+                    excitement: [
+                        `${eventName}倒计时开始！我已经迫不及待了 🎊\n\n终于等到了这场期待已久的演出，每天都在倒数日子～\n\n- 已经准备好了应援物\n- 提前规划好了路线\n- 和闺蜜约好了一起去\n\n有没有同样期待的姐妹？可以一起交流哦～`,
+                        `谁懂啊！抢到了${eventName}的票！太开心了 🥳\n\n抢票的时候手都在抖，没想到居然抢到了心仪的位置～\n\n想知道我是怎么抢到票的吗？可以戳我分享抢票小技巧哦～`
+                    ]
+                },
+                douyin: {
+                    strategy: [
+                        `#${eventName} 抢票攻略来了！学会这几招，轻松抢到心仪的票 🎫\n\n🎯 提前5分钟进入抢票页面\n🎯 选择好支付方式，避免临时切换\n🎯 多设备同时抢票，提高成功率\n\n想要了解更多细节的朋友，可以评论区留言或者私信我～`,
+                        `#${eventName} 选座攻略！不同位置的体验差别居然这么大 👀\n\n📍 前排：近距离看偶像，但可能需要仰头\n📍 中场：音效最佳，视野均衡\n📍 山顶：性价比高，适合预算有限的朋友\n\n纠结选座的朋友可以私信我，给你最实在的建议～`
+                    ],
+                    experience: [
+                        `#${eventName} 现场太燃了！我全程都在尖叫 🎉\n\n昨天去看了这场期待已久的演出，现场氛围简直爆炸！\n\n🎵 偶像的现场唱功绝了\n🎭 舞台效果超级震撼\n👥 粉丝们的大合唱太感动了\n\n错过的朋友不用遗憾，关注我，下次有好演出第一时间分享～`,
+                        `#${eventName} 看完这场演出，我有太多话想说了 💖\n\n从开场到结束，我的情绪一直被带动着\n\n1. 偶像的敬业精神让人敬佩\n2. 现场的互动环节太暖心了\n3. 结束的时候真的舍不得离开\n\n想要了解更多演出细节的朋友可以私信我～`
+                    ],
+                    tips: [
+                        `#${eventName} 避坑指南！这些错误千万别犯 ❌\n\n1. 不要买黄牛票，容易上当\n2. 入场前不要喝太多水，厕所排队很长\n3. 不要带违禁物品，会被没收\n\n想要了解更多注意事项的朋友可以私信我～`,
+                        `#${eventName} 入场必备！看完少走弯路 ✅\n\n1. 身份证/电子票（必须带）\n2. 充电宝（现场人多，充电口少）\n3. 舒适的鞋子（可能需要长时间站立）\n\n还有更多细节想知道的朋友，可以私信我哦～`
+                    ],
+                    excitement: [
+                        `#${eventName} 倒计时！我已经准备好了 🎊\n\n终于等到了这场期待已久的演出，每天都在倒数日子～\n\n🎫 票已到手\n👕 应援服已准备\n👭 和闺蜜约好了一起去\n\n有没有同样期待的朋友？评论区举个手～`,
+                        `#${eventName} 抢到票了！我太开心了 🥳\n\n抢票的时候手都在抖，没想到居然抢到了心仪的位置～\n\n想知道我是怎么抢到票的吗？关注我，下期分享抢票小技巧～`
+                    ]
+                },
+                douban: {
+                    strategy: [
+                        `${eventName}抢票攻略 | 亲测有效的抢票方法\n\n作为一个看过5+场演出的人，总结了一些抢票经验：\n\n1. 提前在多个平台注册账号并绑定支付方式\n2. 了解不同区域的票价和视野情况\n3. 抢票前关闭不必要的应用，确保网络流畅\n\n需要更详细建议的朋友可以豆邮我。`,
+                        `${eventName}选座指南 | 不同预算的最佳选择\n\n- 预算充足：选择前排中间位置，体验最佳\n- 预算中等：选择中场区域，性价比高\n- 预算有限：选择后排或侧边，能看完整场演出\n\n有选座困扰的朋友可以豆邮交流。`
+                    ],
+                    experience: [
+                        `${eventName}现场体验 | 超出预期的精彩\n\n昨天去看了这场演出，整体体验非常棒：\n\n- 舞台设计很用心，视觉效果出色\n- 演员的表演很投入，情感真挚\n- 观众的氛围很好，互动积极\n\n推荐给喜欢这类演出的朋友。`,
+                        `${eventName}观后感 | 那些打动我的瞬间\n\n1. 开场的灯光秀让人眼前一亮\n2. 某首经典歌曲的改编很有创意\n3. 结尾的谢幕环节很感人\n\n如果有朋友想了解更多细节，可以豆邮我。`
+                    ],
+                    tips: [
+                        `${eventName}观演小贴士 | 避免踩坑\n\n1. 入场时间：提前1小时到达，避免排队\n2. 物品准备：带好身份证、充电宝，尽量轻装\n3. 注意事项：遵守场馆规定，文明观演\n\n希望能帮到即将去看演出的朋友。`,
+                        `${eventName}实用指南 | 从交通到住宿\n\n- 交通：建议乘坐公共交通，场馆附近可能堵车\n- 住宿：如果是外地朋友，可以选择场馆附近的酒店\n- 餐饮：场馆周围有很多餐厅，提前规划好用餐时间\n\n有需要的朋友可以豆邮咨询更详细的信息。`
+                    ],
+                    excitement: [
+                        `${eventName}期待中 | 终于等到你\n\n等了这么久，终于要看到这场演出了！\n\n已经准备好了一切，就等着那一天的到来～\n\n有没有同样期待的朋友？可以一起交流一下。`,
+                        `${eventName}抢票成功 | 分享我的喜悦\n\n今天终于抢到了心仪已久的演出票，太开心了！\n\n想知道我是怎么抢到的吗？可以豆邮我分享经验。`
+                    ]
+                }
+            };
+            
+            // 选择随机模板
+            const templates = contentTemplates[platform][genre];
+            const randomIndex = Math.floor(Math.random() * templates.length);
+            const generated = templates[randomIndex];
+            
+            // 显示结果
+            resultDiv.innerHTML = `
+                <div class="recommendation-result">
+                    <div class="recommendation-header">
+                        <span class="recommendation-type">✨ 生成的${platform}引流内容</span>
+                        <button class="btn btn-sm btn-secondary" onclick="copyGeneratedContent()">📋 复制</button>
+                    </div>
+                    <p class="recommendation-text">${generated}</p>
+                    <div class="recommendation-tip">💡 提示：可以根据实际情况修改内容中的细节哦~</div>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+            
+            progress.module2 += 15;
+            updateProgress();
+            showMessage('引流内容生成完成！', 'success');
+        }
+        
+        // 复制生成的内容
+        function copyGeneratedContent() {
+            const text = document.querySelector('#generatedContent .recommendation-text').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showMessage('内容已复制到剪贴板！', 'success');
+            }).catch(err => {
+                showMessage('复制失败，请手动复制', 'error');
+            });
+        }
+        
+        // 选择客户类型
+        function selectCustomerType(type, event) {
+            currentCustomerType = type;
+            
+            // 更新模板卡片样式
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.style.border = '2px solid #e9ecef';
+            });
+            event.currentTarget.style.border = '2px solid #4CAF50';
+            
+            // 重新开始对话
+            restartChat();
+            
+            showMessage(`已选择${type === 'price' ? '价格敏感型' : type === 'quality' ? '质量敏感型' : type === 'urgent' ? '紧急需求型' : type === 'hesitant' ? '犹豫型' : '团体购买型'}客户，对话已重置！`, 'success');
+        }
+        
+        // 模块三功能
+        function restartChat() {
+            chatStep = 0;
+            const chatContainer = document.getElementById('chatContainer');
+            const chatChoices = document.getElementById('chatChoices');
+            const feedback = document.getElementById('feedback');
+            const achievement = document.getElementById('achievement');
+            
+            // 获取当前客户类型的模板
+            const template = customerTemplates[currentCustomerType];
+            
+            // 重置对话
+            chatContainer.innerHTML = `<div class="chat-message customer-message"><strong>客户：</strong>${template.initial}</div>`;
+            
+            // 重置选项
+            if (chatStep < template.steps.length) {
+                const step = template.steps[chatStep];
+                let choicesHTML = '';
+                step.choices.forEach((choice, index) => {
+                    choicesHTML += `<button class="choice-btn" onclick="processChatChoice(${index + 1})">${choice.text}</button>`;
+                });
+                chatChoices.innerHTML = choicesHTML;
+            }
+            
+            // 隐藏反馈和成就
+            feedback.classList.add('hidden');
+            achievement.classList.add('hidden');
+            
+            // 更新进度显示
+            const chatProgress = document.getElementById('chatProgress');
+            const chatProgressBar = document.getElementById('chatProgressBar');
+            if (chatProgress && chatProgressBar) {
+                chatProgress.textContent = `${chatStep + 1}/${template.steps.length}`;
+                chatProgressBar.style.width = `${((chatStep + 1) / (template.steps.length || 1)) * 100}%`;
+            }
+        }
+        
+        function processChatChoice(choice) {
+            const chatContainer = document.getElementById('chatContainer');
+            const chatChoices = document.getElementById('chatChoices');
+            const feedback = document.getElementById('feedback');
+            
+            feedback.classList.remove('hidden');
+            
+            // 获取当前客户类型的模板
+            const template = customerTemplates[currentCustomerType];
+            
+            // 错误处理：验证模板和步骤
+            if (!template || !template.steps || chatStep >= template.steps.length) {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = '对话流程出现错误，请重新开始';
+                return;
+            }
+            
+            // 错误处理：验证选择
+            const currentStep = template.steps[chatStep];
+            if (!currentStep || !currentStep.choices || choice < 1 || choice > currentStep.choices.length) {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = '选择无效，请重新选择';
+                return;
+            }
+            
+            if (chatStep < template.steps.length) {
+                // 获取当前步骤的对话数据
+                const selectedChoice = currentStep.choices[choice - 1];
+                
+                // 设置反馈
+                feedback.className = selectedChoice.correct ? 'feedback correct' : 'feedback incorrect';
+                feedback.innerHTML = selectedChoice.feedback;
+                
+                // 更新对话：添加用户选择的回复
+                chatContainer.innerHTML += `<div class="chat-message agent-message"><strong>你：</strong>${selectedChoice.text.split(':')[1].substring(1)}</div>`;
+                
+                chatStep++;
+                
+                // 更新进度显示
+                const chatProgress = document.getElementById('chatProgress');
+                const chatProgressBar = document.getElementById('chatProgressBar');
+                if (chatProgress && chatProgressBar) {
+                    chatProgress.textContent = `${chatStep + 1}/${template.steps.length}`;
+                    chatProgressBar.style.width = `${((chatStep + 1) / (template.steps.length || 1)) * 100}%`;
+                }
+                
+                // 检查是否还有下一步
+                if (chatStep < template.steps.length) {
+                    // 更新对话：添加客户的下一个问题
+                    chatContainer.innerHTML += `<div class="chat-message customer-message"><strong>客户：</strong>${template.steps[chatStep].question}</div>`;
+                    
+                    // 更新选项
+                    let choicesHTML = '';
+                    template.steps[chatStep].choices.forEach((choice, index) => {
+                        choicesHTML += `<button class="choice-btn" onclick="processChatChoice(${index + 1})">${choice.text}</button>`;
+                    });
+                    chatChoices.innerHTML = choicesHTML;
+                } else {
+                    // 对话结束，添加最终回复
+                    chatContainer.innerHTML += '<div class="chat-message customer-message"><strong>客户：</strong>好的，我现在付款</div>';
+                    chatContainer.innerHTML += '<div class="chat-message agent-message"><strong>你：</strong>感谢您的信任！我会尽快为您出票，并发送电子票到您的邮箱</div>';
+                    
+                    // 完成对话
+                    chatChoices.innerHTML = '';
+                    
+                    progress.module3 = 100;
+                    updateProgress();
+                    showMessage('对话模拟成功！你已经完成了模块三的学习', 'success');
+                    showAchievement('恭喜你完成了模块三的学习！获得了「开单达人」终极勋章');
+                }
+            }
+            
+            // 滚动到底部
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        // 显示成就
+        function showAchievement(message) {
+            const achievementModal = document.createElement('div');
+            achievementModal.className = 'achievement-modal';
+            achievementModal.innerHTML = `
+                <div class="achievement-content">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>恭喜！</h3>
+                    <p>${message}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="close-btn">确定</button>
+                </div>
+            `;
+            document.body.appendChild(achievementModal);
+            
+            // 添加动画效果
+            setTimeout(() => {
+                achievementModal.classList.add('show');
+            }, 10);
+        }
+        
+        // 更新进度
+        function updateProgress() {
+            // 更新进度条
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById('module' + i + 'Progress').textContent = progress['module' + i] + '%';
+                document.getElementById('module' + i + 'Bar').style.width = progress['module' + i] + '%';
+            }
+        }
+        
+        // 显示消息通知
+        function showMessage(message, type = 'info') {
+            // 使用现有的消息显示功能
+            const messageArea = document.createElement('div');
+            messageArea.className = `message ${type}`;
+            messageArea.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(messageArea);
+            
+            // 3秒后自动移除
+            setTimeout(() => {
+                messageArea.remove();
+            }, 3000);
+        }
+        
+        // 初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
